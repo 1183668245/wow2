@@ -5,7 +5,10 @@ class WalletManager {
         this.web3 = null;
         this.account = null;
         this.isConnected = false;
-        this.apiBaseUrl = 'https://api.ariamusic.buzz/api';
+        this.apiBaseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+            || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                ? 'http://localhost:3001/api' 
+                : 'https://api.ariamusic.buzz/api');
         this.connectButton = null;
         this.statusElement = null;
         this.addressElement = null;
