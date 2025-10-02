@@ -1,0 +1,1091 @@
+   
+.profile-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.profile-container {
+    display: flex;
+    background: transparent;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 600px;
+    gap: 30px;
+}
+
+   
+.profile-sidebar {
+    width: 280px;
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.profile-nav {
+    padding: 10px;
+}
+
+.nav-item {
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;     
+    border-radius: 12px;
+    margin: 8px 0;
+    position: relative;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: translateX(4px);     
+}
+
+.nav-item.active {
+    background: rgba(86, 204, 40, 0.15);
+    border-color: #56cc28;
+    color: #56cc28;
+    box-shadow: 0 4px 15px rgba(86, 204, 40, 0.2);
+}
+
+.nav-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: inherit;
+}
+
+   
+.profile-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #56cc28 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+   
+.personal-info-section {
+    padding: 0;
+}
+
+.user-info-card {
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    gap: 40px;
+    transition: transform 0.3s ease;
+}
+
+   
+/* .user-info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+} */
+
+.user-avatar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(86, 204, 40, 0.3);
+    box-shadow: 0 8px 25px rgba(86, 204, 40, 0.2);
+    transition: all 0.3s ease;
+}
+
+.avatar-img:hover {
+    border-color: #56cc28;
+    box-shadow: 0 12px 35px rgba(86, 204, 40, 0.4);
+    transform: scale(1.05);
+}
+
+.upload-avatar-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #56cc28 0%, #4bb023 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(86, 204, 40, 0.3);
+}
+
+.upload-avatar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(86, 204, 40, 0.4);
+    background: linear-gradient(135deg, #4bb023 0%, #3a9417 100%);
+}
+
+.user-details {
+    flex: 1;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row label {
+    width: 120px;
+    font-weight: 600;
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+.info-value {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.wallet-address {
+    font-family: 'Courier New', monospace;
+    background: rgba(86, 204, 40, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(86, 204, 40, 0.3);
+    color: #56cc28;
+    font-weight: 600;
+}
+
+.points {
+    color: #56cc28;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px rgba(86, 204, 40, 0.3);
+}
+
+.info-input {
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.info-input:focus {
+    outline: none;
+    border-color: #56cc28;
+    background: rgba(86, 204, 40, 0.1);
+    box-shadow: 0 0 0 3px rgba(86, 204, 40, 0.2);
+}
+
+.save-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #56cc28 0%, #4bb023 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(86, 204, 40, 0.3);
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(86, 204, 40, 0.4);
+}
+
+.info-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+   
+.refresh-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.refresh-tip {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.tip-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}
+
+.refresh-btn {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(102, 126, 234, 0.8);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.refresh-btn:hover {
+    background: rgba(102, 126, 234, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.refresh-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.refresh-btn:hover .refresh-icon {
+    transform: rotate(180deg);
+}
+
+   
+.login-prompt-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.login-prompt-card {
+    text-align: center;
+    padding: 60px 40px;
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+}
+
+.prompt-icon {
+    margin-bottom: 30px;
+}
+
+.prompt-img {
+    width: 80px;
+    height: 80px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.prompt-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.prompt-message {
+    color: #cccccc;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.connect-wallet-btn {
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #56cc28 0%, #4bb023 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(86, 204, 40, 0.3);
+}
+
+.connect-wallet-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(86, 204, 40, 0.4);
+    background: linear-gradient(135deg, #4bb023 0%, #3a9417 100%);
+}
+
+   
+.creations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0;
+}
+
+.creation-card {
+    background: rgba(42, 42, 42, 0.8);
+    padding: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.creation-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(86, 204, 40, 0.3);
+}
+
+.create-btn, .upload-btn, .mint-nft-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.create-btn:hover, .upload-btn:hover, .mint-nft-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+   
+.share-code-card {
+    background: rgba(42, 42, 42, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.code-box {
+    display: flex;
+    align-items: center;
+    background: rgba(86, 204, 40, 0.1);
+    border: 1px solid rgba(86, 204, 40, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.code-text {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #56cc28;
+    text-shadow: 0 0 10px rgba(86, 204, 40, 0.3);
+}
+
+.copy-code-btn {
+    background: linear-gradient(135deg, #56cc28 0%, #4bb023 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(86, 204, 40, 0.3);
+}
+
+.copy-code-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(86, 204, 40, 0.4);
+}
+
+.share-rewards-info {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #4CAF50;
+}
+
+.reward-text {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #4CAF50;
+}
+
+   
+.share-code-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.share-code-input:focus-within {
+    border-color: rgba(86, 204, 40, 0.5);
+    box-shadow: 0 0 0 3px rgba(86, 204, 40, 0.1);
+    background: rgba(86, 204, 40, 0.05);
+}
+
+.share-code {
+    flex: 1;
+    padding: 16px 20px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    letter-spacing: 0.5px;
+}
+
+.share-code::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+
+   
+.copy-btn {
+    position: relative;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #56cc28 0%, #4bb023 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 4px 15px rgba(86, 204, 40, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    min-width: 80px;
+}
+
+.copy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 8px 25px rgba(86, 204, 40, 0.4),
+        0 4px 15px rgba(86, 204, 40, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #4bb023 0%, #3a9417 100%);
+}
+
+.copy-btn:hover::before {
+    left: 100%;
+}
+
+.copy-btn:active {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 
+        0 4px 15px rgba(86, 204, 40, 0.3),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+   
+.copy-btn:disabled {
+    background: linear-gradient(135deg, #666666 0%, #555555 100%);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+}
+
+.copy-btn:disabled::before {
+    display: none;
+}
+
+   
+.copy-btn.success {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    animation: copySuccess 0.6s ease;
+}
+
+@keyframes copySuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+   
+.copy-btn .copy-icon {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.copy-btn:hover .copy-icon {
+    transform: scale(1.1);
+}
+
+.share-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #56cc28;
+    text-shadow: 0 0 15px rgba(86, 204, 40, 0.3);
+}
+
+.stat-label {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+   
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.nft-card {
+    background: rgba(42, 42, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nft-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(86, 204, 40, 0.3);
+}
+
+.nft-image {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nft-placeholder {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nft-info {
+    padding: 20px;
+}
+
+.nft-info h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.nft-price {
+    color: #56cc28;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+   
+.nft-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.nft-card:hover .nft-img {
+    transform: scale(1.05);
+}
+
+   
+.nft-description {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+   
+.nft-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.view-nft-btn,
+.transfer-nft-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-nft-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.view-nft-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.transfer-nft-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transfer-nft-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+   
+.empty-state {
+    background: rgba(42, 42, 42, 0.5);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.empty-state:hover {
+    border-color: rgba(86, 204, 40, 0.4);
+    background: rgba(86, 204, 40, 0.05);
+}
+
+.empty-state p {
+    color: #888888;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+   
+.nft-display-container {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    position: relative;
+}
+
+   
+.nft-full-display {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    display: block;
+}
+
+   
+@media (max-width: 1200px) {
+    .profile-page {
+        max-width: 100%;
+        padding: 15px;
+    }
+    
+    .profile-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .profile-sidebar {
+        width: 100%;
+    }
+    
+    .profile-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .nav-item {
+        white-space: nowrap;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .user-info-card {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .info-row label {
+        width: auto;
+    }
+    
+    .info-input {
+        width: 100%;
+    }
+    
+    .share-stats {
+        justify-content: space-around;
+        gap: 20px;
+    }
+    
+    .creations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .share-code-input {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+    }
+    
+    .copy-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    
+    .share-code {
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 13px;
+    }
+    
+    .nft-display-container {
+        min-height: 200px;
+    }
+}
+
+   
+@media (prefers-contrast: high) {
+    .copy-btn {
+        border: 2px solid #56cc28;
+        background: #56cc28;
+    }
+    
+    .copy-btn:hover {
+        border-color: #4bb023;
+        background: #4bb023;
+    }
+}
+
+   
+.avatar-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.avatar-modal.show {
+    display: flex;
+}
+
+.avatar-modal-content {
+    background: rgba(42, 42, 42, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.avatar-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.avatar-modal-close {
+    background: none;
+    border: none;
+    color: #cccccc;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.avatar-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.avatar-option {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.avatar-option:hover {
+    border-color: rgba(86, 204, 40, 0.5);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(86, 204, 40, 0.3);
+}
+
+.avatar-option.selected {
+    border-color: #56cc28;
+    box-shadow: 0 0 20px rgba(86, 204, 40, 0.5);
+}
+
+.avatar-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-cancel-btn,
+.avatar-confirm-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.avatar-cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #cccccc;
+}
+
+.avatar-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.avatar-confirm-btn {
+    background: linear-gradient(135deg, #56cc28 0%, #4bb023 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(86, 204, 40, 0.3);
+}
+
+.avatar-confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(86, 204, 40, 0.4);
+}
+
+.avatar-confirm-btn:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: #666666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+   
+.points-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+   
+.recharge-btn {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff4500 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+    min-width: 60px;
+}
+
+.recharge-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #ff7849 0%, #ff5722 100%);
+}
+
+.recharge-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(255, 107, 53, 0.3);
+}
+
+   
+.nft-display-container {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    position: relative;
+}
+
+   
+.nft-full-display {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    display: block;
+}
+
+   
+@media (max-width: 768px) {
+    .nft-display-container {
+        min-height: 200px;
+    }
+}

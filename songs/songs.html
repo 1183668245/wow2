@@ -1,0 +1,84 @@
+<div class="songs-page">
+    <div class="songs-container">
+           
+        <div class="header-section">
+            <h1 class="main-title">AI Song Generator</h1>
+            <p class="subtitle">No copyright disputes, quickly create popular songs</p>
+        </div>
+
+           
+        <div class="input-section">
+            <div class="input-container">
+                   
+                <div class="lyrics-input-group">
+                    <label for="lyricsInput">Lyrics Content</label>
+                    <textarea 
+                        id="lyricsInput" 
+                        placeholder="Please enter your lyrics content...\nFor example:\nOn this beautiful night\nStars are shining bright\nWe sing together\nHearts filled with hope"
+                        rows="8"
+                    ></textarea>
+                </div>
+
+                   
+                <div class="controls-row">
+                       
+                    <div class="control-group">
+                        <label for="styleSelect">Music Style</label>
+                        <select id="styleSelect">
+                            <option value="">Select Style</option>
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="rap">Rap</option>
+                            <option value="blues">Blues</option>
+                            <option value="folk">Folk</option>
+                        </select>
+                    </div>
+
+                       
+                    <div class="control-group">
+                        <label for="singerSelect">Singer Type</label>
+                        <select id="singerSelect">
+                            <option value="">Select Singer</option>
+                            <option value="child">Child Voice</option>
+                            <option value="girl">Girl</option>
+                            <option value="young_woman">Young Woman</option>
+                            <option value="young_man">Young Man</option>
+                            <option value="mature_man">Mature Man</option>
+                            <option value="mature_woman">Mature Woman</option>
+                            <option value="chorus">Chorus</option>
+                        </select>
+                    </div>
+                </div>
+
+                   
+                <div class="generate-section">
+                    <button id="generateBtn" class="generate-btn">
+                        <span class="btn-icon">🎵</span>
+                        <span class="btn-text">Generate Song</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+           
+        <div class="result-section" id="resultSection">
+            <div class="result-header">
+                <h2>Generation Results</h2>
+                <div class="result-status" id="resultStatus">Waiting for generation...</div>
+            </div>
+            
+               
+            <div class="loading-container" id="loadingContainer" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">AI is creating your song, please wait...</p>
+            </div>
+
+               
+            <div class="songs-list" id="songsList">
+                   
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="songs.js"></script>

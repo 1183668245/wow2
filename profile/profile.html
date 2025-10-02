@@ -1,0 +1,42 @@
+<div class="page-content profile-page">
+    <div class="profile-container">
+           
+        <div class="profile-sidebar">
+            <nav class="profile-nav">
+                <div class="nav-item active" data-section="personal-info">
+                    <span class="nav-text">Personal Info</span>
+                </div>
+                   
+                <div class="nav-item" data-section="my-nft">
+                    <span class="nav-text">My NFTs</span>
+                </div>
+                <div class="nav-item" data-section="my-share-code">
+                    <span class="nav-text">Share Code</span>
+                </div>
+            </nav>
+            
+               
+            <div class="refresh-section">
+                <div class="refresh-tip">
+                    <span class="tip-text">Please refresh manually if no response after connection</span>
+                </div>
+                <button class="refresh-btn" onclick="window.profileManager && window.profileManager.refreshUserData()">
+                    <svg class="refresh-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                    <span>Refresh</span>
+                </button>
+            </div>
+        </div>
+        
+           
+        <div class="profile-content">
+               
+        </div>
+    </div>
+</div>
+
+   
+<script src="profile.js"></script>
