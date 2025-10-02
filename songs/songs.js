@@ -124,7 +124,11 @@ class SongsGenerator {
         
                
             console.log('🌐 [DEBUG] Sending wallet verification request to: https://api.ariamusic.buzz/api/auth/verify-wallet');
-            const verifyResponse = await fetch('https://api.ariamusic.buzz/api/auth/verify-wallet', {
+            const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                    ? 'http://localhost:3001/api' 
+                    : 'https://api.ariamusic.buzz/api');
+            const verifyResponse = await fetch(`${baseUrl}/auth/verify-wallet`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`
@@ -148,7 +152,7 @@ class SongsGenerator {
         
                
             console.log('🌐 [DEBUG] Sending points query request to: https://api.ariamusic.buzz/api/auth/check-points');
-            const pointsResponse = await fetch('https://api.ariamusic.buzz/api/auth/check-points', {
+            const pointsResponse = await fetch(`${baseUrl}/auth/check-points`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`
@@ -314,7 +318,11 @@ class SongsGenerator {
             console.log('🔑 [DEBUG] Using AuthToken:', authToken ? 'Retrieved' : 'Not found');
             
             console.log('🌐 [DEBUG] Sending points deduction request to: https://api.ariamusic.buzz/api/auth/deduct-points');
-            const response = await fetch('https://api.ariamusic.buzz/api/auth/deduct-points', {
+            const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                    ? 'http://localhost:3001/api' 
+                    : 'https://api.ariamusic.buzz/api');
+            const response = await fetch(`${baseUrl}/auth/deduct-points`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -351,7 +359,11 @@ class SongsGenerator {
             console.log('🔑 [DEBUG] Using AuthToken:', authToken ? 'Retrieved' : 'Not found');
             
             console.log('🌐 [DEBUG] Sending points refund request to: https://api.ariamusic.buzz/api/auth/refund-points');
-            const response = await fetch('https://api.ariamusic.buzz/api/auth/refund-points', {
+            const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                    ? 'http://localhost:3001/api' 
+                    : 'https://api.ariamusic.buzz/api');
+            const response = await fetch(`${baseUrl}/auth/refund-points`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
