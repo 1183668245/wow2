@@ -1,0 +1,39 @@
+{
+  "name": "xmusic-backend",
+  "version": "1.0.0",
+  "description": "XMusic Backend API with wallet authentication",
+  "main": "app.js",
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "build": "npm install"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.8.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "music",
+    "blockchain",
+    "nft",
+    "lyrics",
+    "api"
+  ],
+  "author": "XMusic Team",
+  "license": "MIT"
+}
