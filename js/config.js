@@ -14,3 +14,12 @@ const API_CONFIG = {
 
  
 window.API_CONFIG = API_CONFIG;
+
+// 通用API URL获取函数
+window.getApiUrl = function(endpoint = '') {
+    const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+        || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+            ? 'http://localhost:3001/api' 
+            : 'https://api.ariamusic.buzz/api');
+    return endpoint ? `${baseUrl}${endpoint}` : baseUrl;
+};
