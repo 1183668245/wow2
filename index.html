@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+     
+    <header class="top-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Aria Logo">
+            </div>
+              
+            <nav class="desktop-tab-nav">
+                <div class="desktop-tab-container">
+                    <a href="#" class="desktop-tab-item active" data-tab="home">
+                        <img src="icon/home.svg" alt="Home">
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="desktop-tab-item" data-tab="lyrics">
+                        <img src="icon/lyrics.svg" alt="Lyrics">
+                        <span>Lyrics</span>
+                    </a>
+                    <a href="#" class="desktop-tab-item" data-tab="songs">
+                        <img src="icon/Songs.svg" alt="Songs">
+                        <span>Songs</span>
+                    </a>
+                    <a href="#" class="desktop-tab-item" data-tab="profile">
+                        <img src="icon/Profile.svg" alt="Profile">
+                        <span>Profile</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="nav-right">
+                <button class="connect-wallet">Connect Wallet</button>
+            </div>
+        </div>
+    </header>
+
+      
+    <main class="main-content">
+          
+        <nav class="mobile-tab-nav">
+            <div class="tab-container">
+                <a href="#" class="tab-item active" data-tab="home">
+                    <img src="icon/home.svg" alt="Home">
+                    <span>Home</span>
+                </a>
+                <a href="#" class="tab-item" data-tab="lyrics">
+                    <img src="icon/lyrics.svg" alt="Lyrics">
+                    <span>Lyrics</span>
+                </a>
+                <a href="#" class="tab-item" data-tab="songs">
+                    <img src="icon/Songs.svg" alt="Songs">
+                    <span>Songs</span>
+                </a>
+                <a href="#" class="tab-item" data-tab="profile">
+                    <img src="icon/Profile.svg" alt="Profile">
+                    <span>Profile</span>
+                </a>
+            </div>
+        </nav>
+
+           
+           
+    </main>
+
+       
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="copyright">© 2025 Aria. All rights reserved.</p>
+        </div>
+    </footer>
+
+       
+    <div class="music-player" id="musicPlayer">
+        <audio id="audioPlayer" preload="metadata"></audio>
+        
+        <div class="player-content">
+               
+            <div class="player-left">
+                <div class="current-song-cover">
+                    <img id="currentCover" src="logo.jpg" alt="Now Playing" class="cover-thumb">
+                </div>
+                <div class="current-song-info">
+                    <div class="current-title" id="currentTitle">Select a Song</div>
+                    <div class="current-artist" id="currentArtist">Aria</div>
+                </div>
+            </div>
+
+             
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="control-btn prev-btn" id="prevSong">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 20L9 12L19 4V20Z" fill="currentColor"/>
+                            <path d="M5 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="control-btn play-pause-btn" id="playPauseBtn" disabled style="opacity: 0.5;">
+                        <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                        </svg>
+                        <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+                            <path d="M6 4H10V20H6V4Z" fill="currentColor"/>
+                            <path d="M14 4H18V20H14V4Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="control-btn next-btn" id="nextSong">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 4L15 12L5 20V4Z" fill="currentColor"/>
+                            <path d="M19 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="progress-container">
+                    <span class="time-display" id="currentTime">0:00</span>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-handle" id="progressHandle"></div>
+                    </div>
+                    <span class="time-display" id="totalTime">0:00</span>
+                </div>
+            </div>
+
+             
+            <div class="player-right">
+                <div class="volume-container">
+                    <button class="control-btn volume-btn" id="volumeBtn">
+                        <svg class="volume-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 12C17.0039 13.3308 16.4774 14.6024 15.54 15.54" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="volume-slider">
+                        <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/contentLoader.js"></script>
+    <script src="wallet/wallet.js"></script>
+    <script src="js/globalMusicPlayer.js"></script>
+     
+     
+</body>
+</html>
