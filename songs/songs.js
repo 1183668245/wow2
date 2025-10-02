@@ -123,7 +123,7 @@ class SongsGenerator {
             }
         
                
-            console.log('🌐 [DEBUG] Sending wallet verification request to: https://api.ariamusic.buzz/api/auth/verify-wallet');
+            console.log('🌐 [DEBUG] Sending wallet verification request to:', `${baseUrl}/auth/verify-wallet`);
             const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
                 || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
                     ? 'http://localhost:3001/api' 
@@ -151,7 +151,7 @@ class SongsGenerator {
             }
         
                
-            console.log('🌐 [DEBUG] Sending points query request to: https://api.ariamusic.buzz/api/auth/check-points');
+            console.log('🌐 [DEBUG] Sending points query request to:', `${baseUrl}/auth/check-points`);
             const pointsResponse = await fetch(`${baseUrl}/auth/check-points`, {
                 method: 'GET',
                 headers: {
@@ -317,7 +317,7 @@ class SongsGenerator {
             const authToken = localStorage.getItem('authToken');
             console.log('🔑 [DEBUG] Using AuthToken:', authToken ? 'Retrieved' : 'Not found');
             
-            console.log('🌐 [DEBUG] Sending points deduction request to: https://api.ariamusic.buzz/api/auth/deduct-points');
+            console.log('🌐 [DEBUG] Sending points deduction request to:', `${baseUrl}/auth/deduct-points`);
             const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
                 || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
                     ? 'http://localhost:3001/api' 
@@ -358,7 +358,7 @@ class SongsGenerator {
             const authToken = localStorage.getItem('authToken');
             console.log('🔑 [DEBUG] Using AuthToken:', authToken ? 'Retrieved' : 'Not found');
             
-            console.log('🌐 [DEBUG] Sending points refund request to: https://api.ariamusic.buzz/api/auth/refund-points');
+            console.log('🌐 [DEBUG] Sending points refund request to:', `${baseUrl}/auth/refund-points`);
             const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
                 || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
                     ? 'http://localhost:3001/api' 
