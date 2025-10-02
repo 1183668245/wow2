@@ -304,7 +304,11 @@ async function addUserPoints(taskId, points) {
 
     try {
          
-        const response = await fetch('https://api.ariamusic.buzz/api/users/add-points', {
+        const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+            || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                ? 'http://localhost:3001/api' 
+                : 'https://api.ariamusic.buzz/api');
+        const response = await fetch(`${baseUrl}/users/add-points`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
