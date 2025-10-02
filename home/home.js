@@ -503,7 +503,7 @@ function showTasksComingSoon() {
                 <div class="task-item">
                     <div class="task-info">
                         <h4>Task 2: Post a Tweet</h4>
-                        <p>Tag @Aria_Plasma and copy the contract to earn 5 points for free!</p>
+                        <p>Tag @ARIA_Web3music and copy the contract to earn 5 points for free!</p>
                     </div>
                     <button id="twitter-btn" class="task-action-btn ${twitterPostCompleted ? 'task-completed' : ''}" 
                             onclick="goToTwitter()" ${twitterPostCompleted ? 'disabled' : ''}>
