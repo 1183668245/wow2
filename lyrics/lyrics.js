@@ -120,7 +120,11 @@ class LyricsGenerator {
             }
     
                
-            const verifyResponse = await fetch('https://api.ariamusic.buzz/api/auth/verify-wallet', {
+            const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                    ? 'http://localhost:3001/api' 
+                    : 'https://api.ariamusic.buzz/api');
+            const verifyResponse = await fetch(`${baseUrl}/auth/verify-wallet`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`
@@ -139,7 +143,7 @@ class LyricsGenerator {
             }
     
                
-            const pointsResponse = await fetch('https://api.ariamusic.buzz/api/auth/check-points', {
+            const pointsResponse = await fetch(`${baseUrl}/auth/check-points`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`
@@ -192,7 +196,11 @@ class LyricsGenerator {
     
         try {
                
-            const deductResponse = await fetch('https://api.ariamusic.buzz/api/auth/deduct-points', {
+            const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                    ? 'http://localhost:3001/api' 
+                    : 'https://api.ariamusic.buzz/api');
+            const deductResponse = await fetch(`${baseUrl}/auth/deduct-points`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -235,7 +243,11 @@ class LyricsGenerator {
             } else {
                    
                 try {
-                    await fetch('https://api.ariamusic.buzz/api/auth/refund-points', {
+                    const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                        || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                            ? 'http://localhost:3001/api' 
+                            : 'https://api.ariamusic.buzz/api');
+                    await fetch(`${baseUrl}/auth/refund-points`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -361,7 +373,11 @@ class LyricsGenerator {
                     } else if (result.status === 'FAILED') {
                            
                         try {
-                            await fetch('https://api.ariamusic.buzz/api/auth/refund-points', {
+                            const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+                                || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                                    ? 'http://localhost:3001/api' 
+                                    : 'https://api.ariamusic.buzz/api');
+                            await fetch(`${baseUrl}/auth/refund-points`, {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
