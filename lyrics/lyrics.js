@@ -1,6 +1,10 @@
 class LyricsGenerator {
     constructor() {
-        this.apiBaseUrl = 'https://api.ariamusic.buzz/api/lyrics';
+        const baseUrl = (window.API_CONFIG && window.API_CONFIG.BASE_URL) 
+            || (['localhost', '127.0.0.1'].includes(window.location.hostname) 
+                ? 'http://localhost:3001/api' 
+                : 'https://api.ariamusic.buzz/api');
+        this.apiBaseUrl = `${baseUrl}/lyrics`;
         this.currentTheme = 'love';
         this.isGenerating = false;
     }
